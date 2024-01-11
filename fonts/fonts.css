@@ -1,9 +1,27 @@
 /* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
+/* Проверка поддержки text-stroke */
+@supports (-webkit-text-stroke: 1px solid transparent) or (text-stroke: 1px solid transparent) {
+  /* Ваш стиль, использующий text-stroke */
+  .example {
+    text-stroke: 1px solid transparent;
+  }
+}
+
+/* Проверка поддержки -webkit-text-stroke */
+@supports (-webkit-text-stroke: 1px solid transparent) {
+  /* Ваш стиль, использующий -webkit-text-stroke */
+  .example {
+    -webkit-text-stroke: 1px solid transparent;
+  }
+}
+
 
 @font-face {
   font-family: 'Inter';
-  src: url('../fonts/Inter-Variable.woff2') format('woff2-variations'),
-       url('../fonts/Inter-Variable.woff2') format('woff2');
+  src: url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+       url('../fonts/Inter-Variable.woff2') format('woff2 supports variations');
+  font-weight: 400;
+  font-weight: 785;
   font-style: normal;
 }
 

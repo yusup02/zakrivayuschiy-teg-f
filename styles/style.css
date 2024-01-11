@@ -47,7 +47,6 @@
   font-size: 65px;
   margin-top: 136px;
   font-family: var(--accent-font);
-  font-size: 49px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -131,7 +130,6 @@
 }
 
 .card {
-  height: 959px;
   margin-top: 57px;
   width: 100%;
   background-color: var(--white-color);
@@ -186,6 +184,7 @@
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
   color: var(--black-color); /* Изначальный цвет текста */
+  margin-bottom: 25px;
 }
 
 .card__like-button::before {
@@ -226,19 +225,6 @@
 .card__icon-button {
   background-color: transparent;
   border: none;
-}
-
-.cont,
-.main-body,
-.sparks {
-  fill: none;
-}
-
-.conture {
-  fill: var(--black-color);
-}
-
-.card__icon-button {
   background-color: transparent;
   height: 38px;
   width: 40px;
@@ -249,6 +235,16 @@
 .card__icon-button:focus-visible {
   border-color: var(--black-color);
   transition: border-color 0.3s ease;
+}
+
+.cont,
+.main-body,
+.sparks {
+  fill: none;
+}
+
+.conture {
+  fill: var(--black-color);
 }
 
 .like-icon {
@@ -417,14 +413,43 @@ dialog::backdrop {
 
 .image {
   width: 100%;
-  border-top: solid 2px var(--black-color);
-  border-bottom: solid 2px var(--black-color);
   background-size: cover;
 }
+
+.image2 {
+  filter: grayscale(100%)
+}
+
+.image3 {
+  filter: sepia(100%);
+}
+
+.image4 {
+  filter: brightness(0.5);
+}
+
+.image5 {
+  filter: saturate(200%); 
+}
+
+.image6 {
+  filter: hue-rotate(90deg);
+}
+
+.image7 {
+  filter: blur(10px);
+}
+
+.image8 {
+  filter: invert(1);
+}
+
 
 .wrapper {
   width: 100%;
   position: relative;
+  border-top: solid 2px var(--black-color);
+  border-bottom: solid 2px var(--black-color);
 }
 
 .label {
@@ -470,4 +495,3 @@ rect {
     width: 317.049px;
   }
 }
-
