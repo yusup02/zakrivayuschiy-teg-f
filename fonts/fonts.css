@@ -19,6 +19,7 @@
   font-family: 'Inter';
   src: url(' ../fonts/Roboto-Flex-Variable.woff2') format('woff2 supports variations'),
   url('../fonts/Roboto-Flex-Variable.woff2') format('woff2-variations');
+  font-weight: 400 785;
   font-variation-settings: 'wght' 400, 'wght' 785;
   font-style: normal;
 }
