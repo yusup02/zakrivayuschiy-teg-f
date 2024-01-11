@@ -99,7 +99,6 @@
   top: 0;
   left: -15px;
   margin-left: 5px;
-  position: absolute;
   animation: moveArrow 1s infinite alternate;
   display: none;
 }
@@ -223,8 +222,6 @@
 }
 
 .card__icon-button {
-  background-color: transparent;
-  border: none;
   background-color: transparent;
   height: 38px;
   width: 40px;
@@ -441,7 +438,7 @@ dialog::backdrop {
 }
 
 .image8 {
-  filter: invert(1);
+  filter: grayscale(50%) blur(2px) brightness(80%) contrast(120%);
 }
 
 
@@ -487,7 +484,6 @@ rect {
   }
 
   .card {
-    height: 760px;
     margin-top: 50px;
   }
 
