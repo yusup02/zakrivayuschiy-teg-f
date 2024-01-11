@@ -1,1 +1,19 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --heard-conture: black;
+  --red: #ff0000;
+  --black-color: #000;
+  --background-color: #d3d3d3;
+  --background: #e7e7e7;
+  --background-black: #1a1a1a;
+  --white-color: #ffff; 
+  --black: #000;
+}
+
+
+:root {
+  --main-font: 'Inter', Arial, sans-serif;
+  --accent-font: 'PressStart2P', Arial, sans-serif;
+  --main-content-weight: 400;
+  --main-heading-weight: 700;
+}
+

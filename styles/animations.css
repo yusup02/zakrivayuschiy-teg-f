@@ -12,3 +12,38 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+
+@keyframes moveArrow {
+  0% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+    
+  }
+  100% {
+    transform: translateX(-4px);
+    
+  }
+}
+
+/* Определите анимацию для увеличения размера sparks */
+@keyframes scaleUpSparks {
+  from {
+    transform: scale(1); /* Исходный размер */
+  }
+  to {
+    transform: scale(1.02); /* Увеличенный размер */
+  }
+}
+
+/* Определите анимацию для исчезновения sparks */
+@keyframes fadeOutSparks {
+  from {
+    opacity: 1; /* Полностью видимый в начале */
+  }
+  to {
+    opacity: 0; /* Полностью прозрачный в конце */
+  }
+}

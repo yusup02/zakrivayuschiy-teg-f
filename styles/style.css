@@ -17,4 +17,457 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: repeating-linear-gradient(
+      to right,
+      var(--background-color),
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--background-color),
+      transparent 4px
+    ),
+    linear-gradient(to bottom, var(--background), var(--background-black));
+  background-size: cover;
+  font-family: var(--main-font), Arial, sans-serif;
 }
+
+.theme-menu {
+  width: 696px;
+  height: 364px;
+  border: 2px solid var(--black-color);
+  background: var(--white-color);
+  margin: 0 auto;
+  margin-top: 102px;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.theme-menu_html {
+  font-size: 65px;
+  margin-top: 136px;
+  font-family: var(--accent-font);
+  font-size: 49px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.theme-menu_text {
+  margin-top: 10px;
+  font-family: var(--accent-font);
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.theme-menu__list {
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 25px;
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.theme-menu__item {
+  width: 70px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
+  color: var(--black-color);
+  font-family: Press Start 2P;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.theme-menu__button::before {
+  content: "►";
+  position: absolute;
+  top: 0;
+  left: -15px;
+  margin-left: 5px;
+  position: absolute;
+  animation: moveArrow 1s infinite alternate;
+  display: none;
+}
+
+.theme-menu__button:disabled::before {
+  display: block;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.conteiner {
+  max-width: 696px;
+  width: 100%;
+  height: 7443px;
+  margin: 0 auto;
+  margin-top: 102px;
+  background-color: var(--white-color);
+}
+
+.card {
+  height: 959px;
+  margin-top: 57px;
+  width: 100%;
+  background-color: var(--white-color);
+  border: 2px solid var(--black-color);
+  background: var(--white-color);
+}
+
+.card_text {
+  color: var(--black-color);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.card_text_1 {
+  color: var(--black-color);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 116.667% */
+  margin: 0 auto;
+  margin-top: 27px;
+  width: 646px;
+}
+
+.card_title {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
+  margin-top: 25px;
+  gap: 12px;
+}
+
+.card__like-button {
+  display: flex;
+  width: 130px;
+  height: 38px;
+  padding: 9px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  border: 2px solid var(--black-color);
+  background: var(--white-color);
+  background-clip: text;
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Для эффекта "заливки" цветом */
+  color: var(--black-color); /* Изначальный цвет текста */
+}
+
+.card__like-button::before {
+  content: ""; /* Необходимо для псевдоэлемента */
+  position: absolute;
+  top: 0;
+  left: -100%; /* Начинаем с левой стороны */
+  width: 100%;
+  height: 100%;
+  background: var(--black-color);
+  z-index: 0;
+  transition: left 0.5s ease;
+}
+
+.card__like-button:hover::before {
+  left: 0; /* Псевдоэлемент "заполняет" кнопку */
+}
+
+.card__like-button span {
+  position: relative; /* Для корректного отображения текста поверх псевдоэлемента */
+  z-index: 1;
+}
+
+.card__like-button:hover span {
+  color: var(--white-color); /* Цвет текста при наведении */
+}
+
+.card__like-button:focus-visible {
+  outline: none;
+  border-color: var(--black-color);
+  box-shadow: 2px 2px 0px 0px var(--black-color);
+}
+
+.card__like-button:hover {
+  cursor: pointer;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.cont,
+.main-body,
+.sparks {
+  fill: none;
+}
+
+.conture {
+  fill: var(--black-color);
+}
+
+.card__icon-button {
+  background-color: transparent;
+  height: 38px;
+  width: 40px;
+  border: 2px solid transparent;
+  outline: none; /* объединяем стили для разного состояния кнопки */
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--black-color);
+  transition: border-color 0.3s ease;
+}
+
+.like-icon {
+  flex-shrink: 0;
+  margin-left: -7px;
+}
+
+.heart-icon {
+  display: none;
+}
+
+.like-icon.is-liked .heart-icon {
+  display: в;
+}
+
+/* Объединяем общие стили для .heart с разными классами */
+.heart .core,
+.heart .main-body,
+.heart:active .core,
+.heart:active .main-body,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .conture {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.heart:hover .core,
+.heart:hover .main-body {
+  fill: var(--black-color);
+  cursor: pointer;
+}
+
+.heart:active .conture,
+.heart:active .main-body {
+  fill: var(--red);
+  transition-delay: 0.07s;
+}
+
+.heart:active .core {
+  fill: var(--red);
+  transition-delay: 0.03s;
+}
+
+/* Определяем задержки для разных элементов */
+.heart .core {
+  transition-delay: 0.03s;
+}
+
+.heart .main-body {
+  transition-delay: 0.07s;
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .conture {
+  transition-delay: 0.03s;
+  fill: var(--red);
+  animation: scaleUpSparks 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  transition-delay: 0.07s;
+  fill: var(--red);
+  animation: scaleUpSparks 0.3s;
+}
+
+/* Устанавливаем задержку только для контура */
+.like-icon.is-liked .conture {
+  transition-delay: 0.07s;
+  animation: scaleUpSparks 0.3s;
+}
+
+/* Применяем анимацию увеличения исчезновения к элементу с классом sparks при нажатии на like-icon */
+.like-icon.is-liked .sparks {
+  fill: var(--red); /* Установите цвет sparks для состояния "liked" */
+  animation: fadeOutSparks 0.3s ease-in-out 0.5s forwards;
+}
+
+.disk {
+  margin: 0 auto;
+  width: 306px;
+  height: 80px;
+  margin-top: 54px;
+}
+
+.disk_button {
+  height: 80px;
+  width: 100%;
+  border: 2px solid var(--black-color);
+  background: var(--white-color);
+  margin: 0 auto;
+  margin-bottom: 102px;
+}
+
+.disk_button:focus-visible {
+  outline: none;
+  border-color: var(--black-color);
+  box-shadow: 2px 2px 0px 0px var(--black-color);
+}
+
+.disk_button:hover {
+  cursor: pointer;
+}
+
+.disk_button_text {
+  color: var(--black-color);
+  font-family: Press Start 2P;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 12.6px */
+}
+
+.dialog {
+  background-color: var(--white-color);
+  border: 2px solid var(--black-color);
+}
+
+.dialog_title {
+  display: flex;
+}
+
+.dialog_text {
+  width: 198px;
+  height: 63px;
+  flex-shrink: 0;
+  margin-left: 20px;
+
+  color: var(--black-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+}
+
+.dialog_button {
+  margin-top: 30px;
+  width: 257px;
+  height: 38px;
+  padding: 9px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: var(--black-color);
+  border: 2px solid var(--black-color);
+  background: var(--white-color);
+}
+
+.dialog_button:focus-visible {
+  outline: none;
+  border-color: var(--black-color);
+  box-shadow: 2px 2px 0px 0px var(--black-color);
+}
+
+.dialog_button:hover {
+  cursor: pointer;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(7px);
+}
+
+.image {
+  width: 100%;
+  border-top: solid 2px var(--black-color);
+  border-bottom: solid 2px var(--black-color);
+  background-size: cover;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.label {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #000; /* цвет текста */
+  text-shadow: 0px 0px 2px #fff; /* обводка */
+  opacity: 0.7;
+  mix-blend-mode: hard-light;
+}
+
+rect {
+  fill: var(--black-color);
+}
+
+@media screen and (max-width: 1430px) {
+  .theme-menu {
+    width: 371px;
+    height: 323px;
+  }
+
+  .theme-menu_html {
+    font-size: 49px;
+    margin-top: 120px;
+  }
+
+  .conteiner {
+    max-width: 371px;
+  }
+
+  .card {
+    height: 760px;
+    margin-top: 50px;
+  }
+
+  .card_text_1 {
+    width: 317.049px;
+  }
+}
+
