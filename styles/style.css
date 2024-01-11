@@ -13,7 +13,6 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -414,7 +413,7 @@ dialog::backdrop {
 }
 
 .image2 {
-  filter: grayscale(100%)
+  filter: grayscale(100%);
 }
 
 .image3 {
@@ -425,12 +424,12 @@ dialog::backdrop {
   filter: brightness(0.5);
 }
 
-.image5 {
-  filter: saturate(200%); 
-}
-
 .image6 {
   filter: hue-rotate(90deg);
+}
+
+.image5 {
+  filter: saturate(200%);
 }
 
 .image7 {
@@ -440,7 +439,6 @@ dialog::backdrop {
 .image8 {
   filter: grayscale(50%) blur(2px) brightness(80%) contrast(120%);
 }
-
 
 .wrapper {
   width: 100%;
