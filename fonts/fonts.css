@@ -1,5 +1,9 @@
 /* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
 /* Проверка поддержки text-stroke */
+.example {
+  -webkit-text-stroke: 1px solid transparent;
+  text-shadow: none;
+}
 
 @font-face {
   font-family: 'Inter';
