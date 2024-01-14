@@ -13,27 +13,51 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-.page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-  background-image: repeating-linear-gradient(
-      to right,
-      var(--background-color),
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      var(--background-color),
-      transparent 4px
-    ),
-    linear-gradient(to bottom, var(--background), var(--background-black));
-  background-size: cover;
-  font-family: var(--main-font), Arial, sans-serif;
+.example {
+  -webkit-text-stroke: 1px solid transparent;
+  text-shadow: none;
 }
 
+@supports (-webkit-text-stroke: 1px solid transparent) or
+  (text-stroke: 1px solid transparent) {
+  .example {
+    text-stroke: 1px solid transparent;
+    text-shadow: none;
+  }
+}
+
+/* Проверка поддержки -webkit-text-stroke */
+@supports (-webkit-text-stroke: 1px solid transparent) {
+  .example {
+    -webkit-text-stroke: 1px solid transparent;
+    text-shadow: none;
+  }
+}
+
+.page {
+  background-color: var(--white-color);
+  background-image: repeating-linear-gradient(
+      to top,
+      var(--background-color) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--background-color) 0 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(
+      var(--background) 0%,
+      var(--background) 0.1%,
+      var(--background-black) 100%
+    );
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* меню */
 .theme-menu {
   width: 696px;
-  height: 364px;
+  padding-bottom: 25px;
   border: 2px solid var(--black-color);
   background: var(--white-color);
   margin: 0 auto;
@@ -42,10 +66,14 @@
   color: var(--black-color);
 }
 
+.theme-menu_title {
+  text-decoration: none;
+}
+
 .theme-menu_html {
   font-size: 65px;
   margin-top: 136px;
-  font-family: var(--accent-font);
+  font-family: "PressStart2P", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -54,7 +82,7 @@
 
 .theme-menu_text {
   margin-top: 10px;
-  font-family: var(--accent-font);
+  font-family: "PressStart2P", Arial, sans-serif;
   font-size: 23px;
   font-style: normal;
   font-weight: 400;
@@ -63,10 +91,9 @@
 }
 
 .theme-menu__list {
-  width: 80px;
   margin: 0 auto;
   margin-top: 25px;
-  font-family: var(--main-font);
+  font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -75,21 +102,22 @@
 }
 
 .theme-menu__item {
-  width: 70px;
   margin: 0 auto;
-  position: relative;
 }
 
 .theme-menu__button {
+  width: 62px;
+  text-align: left;
   background-color: transparent;
   border: none;
   color: var(--black-color);
-  font-family: Press Start 2P;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  position: relative;
 }
 
 .theme-menu__button::before {
@@ -98,7 +126,7 @@
   top: 0;
   left: -15px;
   margin-left: 5px;
-  animation: moveArrow 1s infinite alternate;
+  animation: moveArrow 0.5s infinite alternate;
   display: none;
 }
 
@@ -107,6 +135,7 @@
 }
 
 .theme-menu__button:disabled {
+  pointer-events: none;
   opacity: 0.6;
 }
 
@@ -118,15 +147,16 @@
   outline: none;
 }
 
+/* Контейнер */
 .conteiner {
   max-width: 696px;
   width: 100%;
-  height: 7443px;
   margin: 0 auto;
   margin-top: 102px;
   background-color: var(--white-color);
 }
 
+/* Карточки */
 .card {
   margin-top: 57px;
   width: 100%;
@@ -137,23 +167,25 @@
 
 .card_text {
   color: var(--black-color);
-  font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.card_text_1 {
+.card_text_inner {
   color: var(--black-color);
-  font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 21px; /* 116.667% */
   margin: 0 auto;
   margin-top: 27px;
-  width: 646px;
+  max-width: 646px;
+  width: 100%;
+  margin-top: 27px;
 }
 
 .card_title {
@@ -177,11 +209,9 @@
   border: 2px solid var(--black-color);
   background: var(--white-color);
   background-clip: text;
-  transition: background-color 0.5s ease, color 0.5s ease,
-    border-color 0.3s ease;
+  transition: background-color 0.5s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
-  color: var(--black-color); /* Изначальный цвет текста */
   margin-bottom: 25px;
 }
 
@@ -194,20 +224,16 @@
   height: 100%;
   background: var(--black-color);
   z-index: 0;
-  transition: left 0.5s ease;
+  transition: left 0.5s ease-in-out;
 }
 
 .card__like-button:hover::before {
   left: 0; /* Псевдоэлемент "заполняет" кнопку */
 }
 
-.card__like-button span {
+.card__like-button .button__text {
   position: relative; /* Для корректного отображения текста поверх псевдоэлемента */
   z-index: 1;
-}
-
-.card__like-button:hover span {
-  color: var(--white-color); /* Цвет текста при наведении */
 }
 
 .card__like-button:focus-visible {
@@ -220,196 +246,31 @@
   cursor: pointer;
 }
 
+.button__text {
+  mix-blend-mode: difference;
+  font-family: "Inter", Arial, sans-serif;
+}
+
 .card__icon-button {
+  padding: 0;
   background-color: transparent;
   height: 38px;
   width: 40px;
   border: 2px solid transparent;
   outline: none; /* объединяем стили для разного состояния кнопки */
+  margin-right: 7px;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .card__icon-button:focus-visible {
   border-color: var(--black-color);
-  transition: border-color 0.3s ease;
 }
 
-.cont,
-.main-body,
-.sparks {
-  fill: none;
-}
-
-.conture {
-  fill: var(--black-color);
-}
-
-.like-icon {
-  flex-shrink: 0;
-  margin-left: -7px;
-}
-
-.heart-icon {
-  display: none;
-}
-
-.like-icon.is-liked .heart-icon {
-  display: в;
-}
-
-/* Объединяем общие стили для .heart с разными классами */
-.heart .core,
-.heart .main-body,
-.heart:active .core,
-.heart:active .main-body,
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body,
-.like-icon.is-liked .conture {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.heart:hover .core,
-.heart:hover .main-body {
-  fill: var(--black-color);
-  cursor: pointer;
-}
-
-.heart:active .conture,
-.heart:active .main-body {
-  fill: var(--red);
-  transition-delay: 0.07s;
-}
-
-.heart:active .core {
-  fill: var(--red);
-  transition-delay: 0.03s;
-}
-
-/* Определяем задержки для разных элементов */
-.heart .core {
-  transition-delay: 0.03s;
-}
-
-.heart .main-body {
-  transition-delay: 0.07s;
-}
-
-.like-icon.is-liked .core,
-.like-icon.is-liked .conture {
-  transition-delay: 0.03s;
-  fill: var(--red);
-  animation: scaleUpSparks 0.3s;
-}
-
-.like-icon.is-liked .main-body {
-  transition-delay: 0.07s;
-  fill: var(--red);
-  animation: scaleUpSparks 0.3s;
-}
-
-/* Устанавливаем задержку только для контура */
-.like-icon.is-liked .conture {
-  transition-delay: 0.07s;
-  animation: scaleUpSparks 0.3s;
-}
-
-/* Применяем анимацию увеличения исчезновения к элементу с классом sparks при нажатии на like-icon */
-.like-icon.is-liked .sparks {
-  fill: var(--red); /* Установите цвет sparks для состояния "liked" */
-  animation: fadeOutSparks 0.3s ease-in-out 0.5s forwards;
-}
-
-.disk {
-  margin: 0 auto;
-  width: 306px;
-  height: 80px;
-  margin-top: 54px;
-}
-
-.disk_button {
-  height: 80px;
-  width: 100%;
-  border: 2px solid var(--black-color);
-  background: var(--white-color);
-  margin: 0 auto;
-  margin-bottom: 102px;
-}
-
-.disk_button:focus-visible {
-  outline: none;
-  border-color: var(--black-color);
-  box-shadow: 2px 2px 0px 0px var(--black-color);
-}
-
-.disk_button:hover {
-  cursor: pointer;
-}
-
-.disk_button_text {
-  color: var(--black-color);
-  font-family: Press Start 2P;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 90%; /* 12.6px */
-}
-
-.dialog {
-  background-color: var(--white-color);
-  border: 2px solid var(--black-color);
-}
-
-.dialog_title {
-  display: flex;
-}
-
-.dialog_text {
-  width: 198px;
-  height: 63px;
-  flex-shrink: 0;
-  margin-left: 20px;
-
-  color: var(--black-color);
-  font-family: var(--accent-font);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 21px */
-  text-transform: uppercase;
-}
-
-.dialog_button {
-  margin-top: 30px;
-  width: 257px;
-  height: 38px;
-  padding: 9px 17px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  color: var(--black-color);
-  border: 2px solid var(--black-color);
-  background: var(--white-color);
-}
-
-.dialog_button:focus-visible {
-  outline: none;
-  border-color: var(--black-color);
-  box-shadow: 2px 2px 0px 0px var(--black-color);
-}
-
-.dialog_button:hover {
-  cursor: pointer;
-}
-
-dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
-}
-
+/* Картинки */
 .image {
   width: 100%;
-  background-size: cover;
+  object-fit: cover;
+  object-position: center;
 }
 
 .image2 {
@@ -447,8 +308,185 @@ dialog::backdrop {
   border-bottom: solid 2px var(--black-color);
 }
 
+/* Сердце */
+.cont,
+.main-body,
+.sparks {
+  fill: none;
+}
+
+.conture {
+  fill: var(--black-color);
+}
+
+.like-icon {
+  flex-shrink: 0;
+}
+
+.heart-icon {
+  display: none;
+}
+
+/* Объединяем общие стили для .heart с разными классами */
+.heart .core,
+.heart .main-body,
+.heart:active .core,
+.heart:active .main-body,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .conture {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.heart:hover .core,
+.heart:hover .main-body {
+  fill: var(--black-color);
+  cursor: pointer;
+}
+
+.heart:active .conture,
+.heart:active .main-body {
+  fill: var(--red);
+  transition-delay: 0.1s;
+}
+
+.heart:active .core {
+  fill: var(--red);
+  transition-delay: 0.03s;
+}
+
+/* Определяем задержки для разных элементов */
+.heart .core {
+  transition-delay: 0.03s;
+}
+
+.heart .main-body {
+  transition-delay: 0.07s;
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .conture {
+  transition-delay: 0.03s;
+  fill: var(--red);
+  animation: scaleUpSparks 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  transition-delay: 0.07s;
+  fill: var(--red);
+  animation: scaleUpSparks 0.3s;
+}
+
+/* Устанавливаем задержку только для контура */
+.like-icon.is-liked .conture {
+  transition-delay: 0.03s;
+  animation: scaleUpSparks 0.3s ease-in-out alternate;
+}
+
+/* Применяем анимацию увеличения исчезновения к элементу с классом sparks при нажатии на like-icon */
+.like-icon.is-liked .sparks {
+  fill: var(--red); /* Установливаем цвет sparks для состояния "liked" */
+  animation: fadeOutSparks 0.05s ease-in-out alternate 0.3s forwards;
+}
+
+/* Кнопка с дискетом */
+.disk {
+  margin: 0 auto;
+  width: 306px;
+  height: 80px;
+  margin-top: 54px;
+}
+
+.disk_button {
+  height: 80px;
+  width: 100%;
+  border: 2px solid var(--black-color);
+  background: var(--white-color);
+  margin: 0 auto;
+  margin-bottom: 102px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.disk_button:focus-visible {
+  outline: none;
+  border-color: var(--black-color);
+  box-shadow: 2px 2px 0px 0px var(--black-color);
+}
+
+.disk_button:hover {
+  cursor: pointer;
+}
+
+.button__text {
+  font-family: "PressStart2P", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 12.6px */
+}
+
+/* Модалка */
+.dialog {
+  background-color: var(--white-color);
+  border: 2px solid var(--black-color);
+}
+
+.dialog_title {
+  display: flex;
+}
+
+.dialog_text {
+  max-width: 198px;
+  width: 100%;
+  flex-shrink: 0;
+  margin-left: 20px;
+
+  color: var(--black-color);
+  font-family: "PressStart2P", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+}
+
+.dialog_button {
+  margin-top: 30px;
+  width: 257px;
+  height: 38px;
+  padding: 9px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: var(--black-color);
+  border: 2px solid var(--black-color);
+  background: var(--white-color);
+}
+
+.dialog_button:focus-visible {
+  outline: none;
+  border-color: var(--black-color);
+  box-shadow: 2px 2px 0px 0px var(--black-color);
+}
+
+.dialog_button:hover {
+  cursor: pointer;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(7px);
+}
+
 .label {
-  font-family: var(--accent-font);
+  font-family: "PressStart2P", Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -458,7 +496,7 @@ dialog::backdrop {
   right: 25px;
   color: #000; /* цвет текста */
   text-shadow: 0px 0px 2px #fff; /* обводка */
-  opacity: 0.7;
+  opacity: 0.5;
   mix-blend-mode: hard-light;
 }
 
@@ -469,7 +507,6 @@ rect {
 @media screen and (max-width: 1430px) {
   .theme-menu {
     width: 371px;
-    height: 323px;
   }
 
   .theme-menu_html {
@@ -485,7 +522,7 @@ rect {
     margin-top: 50px;
   }
 
-  .card_text_1 {
+  .card_text_inner {
     width: 317.049px;
   }
 }

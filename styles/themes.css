@@ -14,6 +14,18 @@
   --black: #000;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black-color: #00cc14;
+    --background-color: #000;
+    --background: #007f0c;
+    --background-black: #004306;
+    --white-color: #000;
+    --black: #000;
+  }
+
+}
+
 :root.theme-light {
   --heard-conture: black;
   --red: #ff0000;
@@ -22,30 +34,5 @@
   --background: #e7e7e7;
   --background-black: #1a1a1a;
   --black: #000;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --red: #ff0000;
-    --black-color: #00cc14;
-    --background-color: #000;
-    --background: #007f0c;
-    --background-black: #004306;
-    --white-color: #000;
-    --black: #000;
-  }
-}
-
-@meta (prefers-color-scheme:light) {
-
-:root {
-  --heard-conture: black;
-  --red: #ff0000;
-  --black-color: #000;
-  --background-color: #d3d3d3;
-  --background: #e7e7e7;
-  --background-black: #1a1a1a;
-  --black: #000;
-}
-
+  --white-color: #ffff;
 }

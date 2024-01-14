@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="dark light" />
     <title>Закрывающий тег</title>
-    <link class="icon" rel="icon" href="./svg/favicon.svg" type="image/x-icon">
+    <link
+      class="icon"
+      rel="icon"
+      href="./svg/favicon.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
@@ -16,10 +21,13 @@
   </head>
 
   <body class="page">
+    <!-- Заголовок и меню -->
     <header class="header">
       <nav class="theme-menu header__theme-menu">
-        <h1 class="theme-menu_html">&lt;/HTML&gt;</h1>
-        <p class="theme-menu_text">Закрывающийся тег</p>
+        <a class="theme-menu_title" href="#">
+          <h1 class="theme-menu_html">&lt;/HTML&gt;</h1>
+        </a>
+        <h1 class="theme-menu_text">Закрывающийся тег</h1>
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
           <li class="theme-menu__item">
@@ -46,25 +54,28 @@
       </nav>
     </header>
     <main class="conteiner">
-      <section class="card">
+       <!-- Блок с карточками -->
+      <section>
+        <!-- 1 карта -->
+      <article class="card">
         <h2 class="card_text">Фритрек и нулевой спринт: Подготовка к работе</h2>
 
         <div class="wrapper">
-          <img class="image" src="./images/image.png" alt="Image" />
+          <img class="image" src="./images/image.png" alt="минивен1" />
           <p class="label">&lt;/HTML&gt;</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           Это было самое начало пути. На этом этапе важно было проникнуться
           основами и настроиться на учёбу. И, возможно, подумать, как новые
           знания могут повлиять на ваше будущее.
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -100,32 +111,33 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
+              <!-- 2 карта -->
+      <article class="card">
         <h2 class="card_text">1 спринт: Я — чистый лист</h2>
         <div class="wrapper">
-          <img class="image image2" src="./images/image.png" alt="Image" />
+          <img class="image image2" src="./images/image.png" alt="минивен2" />
           <p class="label">&lt;/HTML&gt;</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           На первых этапах мы работали со страхами и сомнениями, которые часто
           испытывают новички. Один из них — страх перед чистым листом. Это,
           конечно же, намного сложнее, чем боязнь куска бумаги. Часто за этим
           ощущением скрываются более глубокие вопросы: с чего начать? а вдруг
           будет слишком сложно? что, если я не справлюсь?
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -161,30 +173,31 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
+              <!-- 3 карта -->
+      <article class="card">
         <h2 class="card_text">1 спринт: А если не получится?</h2>
         <div class="wrapper">
-          <img class="image image3" src="./images/image.png" alt="Image" />
+          <img class="image image3" src="./images/image.png" alt="минивен3" />
           <p class="label">&lt;CSS&gt;</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           Первый проект — позади! Но это всё ещё самое начало пути. Радость
           могла быстро померкнуть и смениться ожиданием провала. Или вы,
           наоборот, могли вдохновиться успехами и поверить в себя.
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -220,32 +233,33 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
+              <!-- 4 карта -->
+      <article class="card">
         <h2 class="card_text">2 спринт: Погоня за идеалом</h2>
         <div class="wrapper">
-          <img class="image image4" src="./images/image.png" alt="Image" />
+          <img class="image image4" src="./images/image.png" alt="минивен4" />
           <p class="label">&lt;desigions&gt;</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы
           понять, как много ещё впереди. Вы могли попытаться погнаться за
           идеалом и понять, что он недостижим. А, может, вы вовсе и не
           подвержены перфекционизму и вместо того, чтобы сделать идеально,
           старались просто сделать.
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -281,32 +295,33 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
+              <!-- 5 карта -->
+      <article class="card">
         <h2 class="card_text">2 спринт: О тех, кто рядом</h2>
         <div class="wrapper">
-          <img class="image image5" src="./images/image.png" alt="Image" />
+          <img class="image image5" src="./images/image.png" alt="минивен5" />
           <p class="label">care</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           Всё это время вы были не одиноки (хотя, возможно, иногда и
           чувствовали, что одни против целого мира). Вас окружали одногруппники,
           команда сопровождения и просто близкие люди, которым можно
           пожаловаться, если очередной макет просто так не поддавался. Осваивать
           что-то новое легче, когда рядом есть единомышленники, не правда ли?
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -342,30 +357,31 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
+              <!-- 6 карта -->
+      <article class="card">
         <h2 class="card_text">3 спринт: Обходные стратегии</h2>
         <div class="wrapper">
-          <img class="image image6" src="./images/image.png" alt="Image" />
+          <img class="image image6" src="./images/image.png" alt="минивен6" />
           <p class="label">&lt;support&gt;</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           На этом курсе вы постоянно решали разные задачи. В какой-то момент вам
           могло показаться, что решения просто иссякли. Значит, пришло время
           посмотреть на задачу под другим углом.
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -401,31 +417,32 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
+              <!-- 7 карта -->
+      <article class="card">
         <h2 class="card_text">3 спринт: Когда опускаются руки</h2>
         <div class="wrapper">
-          <img class="image image7" src="./images/image.png" alt="Image" />
+          <img class="image image7" src="./images/image.png" alt="минивен7" />
           <p class="label">&lt;lifes-style: none;&gt;</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           Во время учёбы часто возникает чувство, когда не знаешь, за что
           хвататься. Вроде и проектную пора сдавать, и задачи хочется порешать,
           и в теории получше разобраться, и жизнь не забыть пожить. В такие
           моменты очень нужна концентрация. Вспомните, откуда вы её черпали.
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -461,20 +478,21 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
+              <!-- 8 карта -->
+      <article class="card">
         <h2 class="card_text">«Сейчас я здесь»</h2>
         <div class="wrapper">
-          <img class="image image8" src="./images/image.png" alt="Image" />
+          <img class="image image8" src="./images/image.png" alt="минивен" />
           <p class="label">&lt;experience&gt;</p>
         </div>
 
-        <p class="card_text_1">
+        <p class="card_text_inner">
           Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
           Во-первых, впереди ещё много материала про «красотищу». Во-вторых, с
           окончанием курса учёба не заканчивается. Вёрстка — это целый мир. И
@@ -482,12 +500,12 @@
           это тот случай, когда важен сам процесс познания. Ведь часто путь — и
           есть результат.
         </p>
-        <p class="card_text_1 text_1">
+        <p class="card_text_inner">
           Место для ваших воспоминаний о начале обучения.
         </p>
 
         <div class="card_title">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="submit">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -523,21 +541,24 @@
             </svg>
           </button>
 
-          <button class="card__like-button">
+          <button class="card__like-button" type="submit">
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
+      </article>
+    </section>
 
-      <footer class="disk">
+<!-- Кнопка и модалка -->
+      <section class="disk">
         <button
           class="disk_button"
           id="dialog"
-          type="button"
+          type="submit"
           onclick="window['dialog-id'].showModal();"
           aria-controls="dialog-id"
         >
-          <svg
+          <svg 
+          aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="29"
             height="28"
@@ -1156,11 +1177,13 @@
               fill="black"
             />
           </svg>
-          <span class="disk_button_text">Сохранить на память</span>
+          <span class="button__text">Сохранить на память </span>
         </button>
 
+        <!-- Модалка -->
         <dialog class="dialog" id="dialog-id">
           <div class="dialog_title">
+          
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="29"
@@ -1168,6 +1191,7 @@
               viewBox="0 0 29 28"
               fill="none"
             >
+            
               <rect x="0.5" width="2.15385" height="2.15385" fill="black" />
               <rect
                 x="0.5"
@@ -1782,15 +1806,17 @@
             </svg>
             <h2 class="dialog_text">Вставьте дискету, чтобы продолжить</h2>
           </div>
+          <form action="#" method="dialog" >
           <button
             class="dialog_button"
-            type="button"
+            type="submit"
             onclick="window['dialog-id'].close()"
           >
             ОК
           </button>
+        </form>
         </dialog>
-      </footer>
+      </section>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
