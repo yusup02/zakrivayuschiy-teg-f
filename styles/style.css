@@ -13,6 +13,31 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+.example {
+  -webkit-text-stroke: 1px solid transparent;
+  text-shadow: none;
+  font-family: 'Inter', sans-serif; /* Используйте ваш шрифт */
+  font-variation-settings: 'wght' 500; /* Настройки вариации шрифта */
+}
+
+@supports (-webkit-text-stroke: 1px solid transparent) or (text-stroke: 1px solid transparent) {
+  .example {
+    text-stroke: 1px solid transparent;
+    text-shadow: none;
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 500;
+  }
+}
+
+/* Проверка поддержки -webkit-text-stroke */
+@supports (-webkit-text-stroke: 1px solid transparent) {
+  .example {
+    -webkit-text-stroke: 1px solid transparent;
+    text-shadow: none;
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 500;
+  }
+}
 
 .page {
   background-color: var(--white-color);
