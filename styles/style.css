@@ -215,7 +215,7 @@
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
   mix-blend-mode: difference;
-  background-color: var(--difference-black); 
+  background-color: var(--difference-black);
   z-index: 0;
 }
 
@@ -226,7 +226,7 @@
 	height: 100%;
   translate: -100%;
   transition: all 0.5s ease-in-out;
-  background-color: var(--difference-while); 
+  background-color: var(--difference-while);
   z-index: 1;
 }
 
@@ -259,7 +259,6 @@
   position: relative;
   padding-block: 11px;
   line-height: 0.9;
-  z-index: 2;
   mix-blend-mode: difference;
 }
 
@@ -381,10 +380,10 @@
 .like-icon.is-liked .conture {
   transition-delay: 0.06s;
   fill: var(--red);
-  animation: scaleUpSparks 0.3s;
+  animation: scaleUpSparks 0.3s ease-in-out alternate;
 }
 
-.like-icon.is-liked .core{
+.like-icon.is-liked .core {
   transition-delay: 0.03s;
   fill: var(--red);
   animation: scaleUpSparks 0.3s;
@@ -394,12 +393,6 @@
   transition-delay: 0.07s;
   fill: var(--red);
   animation: scaleUpSparks 0.3s;
-}
-
-/* Устанавливаем задержку только для контура */
-.like-icon.is-liked .conture {
-  transition-delay: 0.03s;
-  animation: scaleUpSparks 0.3s ease-in-out alternate;
 }
 
 /* Применяем анимацию увеличения исчезновения к элементу с классом sparks при нажатии на like-icon */
