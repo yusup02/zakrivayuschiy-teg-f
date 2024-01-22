@@ -12,6 +12,9 @@
   --background-black: #004306;
   --white-color: #000;
   --black: #000;
+  --difference-while: #00cc14;
+  --difference-text:  #00cc14;
+  --disk: #00cc14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +25,9 @@
     --background-black: #004306;
     --white-color: #000;
     --black: #000;
+    --difference-while: #00cc14;
+    --difference-text:  #00cc14;
+    --disk: #00cc14;
   }
 
 }
@@ -35,4 +41,8 @@
   --background-black: #1a1a1a;
   --black: #000;
   --white-color: #ffff;
+  --difference-while: #fff;
+  --difference-black:  #000;
+  --difference-text:  #fff;
+  --disk: #000;
 }

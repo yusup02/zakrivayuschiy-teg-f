@@ -200,64 +200,67 @@
   gap: 12px;
 }
 
-.card__like-button {
+.button {
   display: flex;
   width: 130px;
-  height: 38px;
-  padding: 9px 17px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
 
-  border: 2px solid var(--black-color);
-  background: var(--white-color);
+  border: 2px solid var(--difference-while);
   background-clip: text;
   transition: background-color 0.5s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
-}
-
-.card__like-button::before {
-  content: ""; /* Необходимо для псевдоэлемента */
-  position: absolute;
-  top: 0;
-  left: -100%; /* Начинаем с левой стороны */
-  width: 100%;
-  height: 100%;
-  background: var(--black-color);
+  mix-blend-mode: difference;
+  background-color: var(--difference-black); 
   z-index: 0;
-  transition: left 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before {
-  left: 0; /* Псевдоэлемент "заполняет" кнопку */
+.button::before {
+  content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  translate: -100%;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--difference-while); 
+  z-index: 1;
 }
 
-.card__like-button .button__text {
+.button:hover::before {
+  translate: 0%;
+}
+
+.button .button__text {
   position: relative; /* Для корректного отображения текста поверх псевдоэлемента */
   z-index: 1;
 }
 
-.card__like-button:focus-visible {
+.button:focus-visible {
   outline: none;
-  border-color: var(--black-color);
-  box-shadow: 2px 2px 0px 0px var(--black-color);
+  border-color: var(--difference-while);
+  box-shadow: 2px 2px 0px 0px var(--difference-while);
 }
 
-.card__like-button:hover {
+.button:hover {
   cursor: pointer;
 }
 
 .button__text {
-  color: #000;
-  mix-blend-mode: difference;
+  color: var(--difference-text);
   font-family: "PressStart2P", Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 90%; /* 12.6px */
+  z-index: 2;
+  position: relative;
+  padding-block: 11px;
+  line-height: 0.9;
+  z-index: 2;
+  mix-blend-mode: difference;
 }
 
 .card__icon-button {
@@ -280,6 +283,7 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
 .image2 {
@@ -374,8 +378,13 @@
   transition-delay: 0.07s;
 }
 
-.like-icon.is-liked .core,
 .like-icon.is-liked .conture {
+  transition-delay: 0.06s;
+  fill: var(--red);
+  animation: scaleUpSparks 0.3s;
+}
+
+.like-icon.is-liked .core{
   transition-delay: 0.03s;
   fill: var(--red);
   animation: scaleUpSparks 0.3s;
@@ -403,15 +412,12 @@
 .disk {
   margin: 0 auto;
   width: 306px;
-  height: 80px;
   margin-top: 54px;
 }
 
 .disk_button {
-  height: 80px;
   width: 100%;
-  border: 2px solid var(--black-color);
-  background: var(--white-color);
+
   margin: 0 auto;
   margin-bottom: 102px;
   display: flex;
@@ -420,6 +426,7 @@
   justify-content: center;
   padding-top: 15px;
   padding-bottom: 15px;
+
 }
 
 .disk_button:focus-visible {
@@ -501,8 +508,20 @@ dialog::backdrop {
   mix-blend-mode: hard-light;
 }
 
+.disk_svg {
+  position: relative;
+  z-index: 2;
+  fill: var(--disk);
+  mix-blend-mode: difference;
+}
+
+.text {
+  padding: 0;
+}
+
 rect {
-  fill: var(--black-color);
+  fill: var(--difference-text);
+  mix-blend-mode: difference;
 }
 
 @media screen and (max-width: 1430px) {
