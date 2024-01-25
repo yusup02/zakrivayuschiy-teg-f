@@ -13,19 +13,110 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+/* Сердце */
+.cont,
+.main-body,
+.sparks {
+  fill: none;
+}
+
+.core {
+  transition: fill 0.3s ease 0.05s;
+}
+
+.conture {
+  fill: var(--black-color);
+  transition: fill 0.1s linear;
+}
+
+.main-body {
+  transition: fill 0.3s ease;
+}
+
+.like-icon {
+  flex-shrink: 0;
+}
+
+.heart-icon {
+  display: none;
+}
+
+/* Объединяем общие стили для .heart с разными классами */
+.heart .core,
+.heart .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+  transform-origin: center;
+}
+
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .conture {
+  fill: transparent;
+  transition: fill 0.3s ease 0.06s; ;
+  transform-origin: center;
+}
+
+.heart:active .main-body,
+.heart:active .core {
+  fill: transparent;
+  transition: fill 0.3s ease 0.06s;
+  transform-origin: center;
+}
+
+.heart:hover .core,
+.heart:hover .main-body {
+  fill: var(--black-color);
+  cursor: pointer;
+}
+
+.heart:active .conture,
+.heart:active .main-body {
+  fill: var(--red);
+  transition-delay: 0.1s;
+}
+
+.heart:active .core {
+  fill: var(--red);
+  transition-delay: 0.03s;
+}
+
+/* Определяем задержки для разных элементов */
+.heart .core {
+  transition-delay: 0.03s;
+}
+
+.heart .main-body {
+  transition-delay: 0.07s;
+}
+
+.like-icon.is-liked .conture {
+  transition-delay: 0.06s;
+  fill: var(--red);
+}
+
+.like-icon.is-liked .core {
+  transition-delay: 0.03s;
+  fill: var(--red);
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--red);
+}
+
+/* Применяем анимацию увеличения исчезновения к элементу с классом sparks при нажатии на like-icon */
+.like-icon.is-liked .sparks {
+  fill: var(--red); /* Установливаем цвет sparks для состояния "liked" */
+  animation: fadeOutSparks 0.05s ease-in-out alternate 0.3s forwards;
+  transform-origin: center;
+}
+
+
 
 @keyframes moveArrow {
-  0% {
-    transform: translateX(-4px);
-  }
-  50% {
-    transform: translateX(4px);
-    
-  }
-  100% {
-    transform: translateX(-4px);
-    
-  }
+  0% { transform: translateX(-4px); }
+  100% { transform: translateX(4px); } 
 }
 
 /* Определяем анимацию для увеличения размера sparks */
@@ -34,7 +125,7 @@
     transform: scale(1); /* Исходный размер */
   }
   to {
-    transform: scale(1.09); /* Увеличенный размер */
+    transform: scale(1.5); /* Увеличенный размер */
   }
 }
 

@@ -15,6 +15,7 @@
   --difference-while: #00cc14;
   --difference-text:  #00cc14;
   --disk: #00cc14;
+  --border:#fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +29,7 @@
     --difference-while: #00cc14;
     --difference-text:  #00cc14;
     --disk: #00cc14;
+    --border:#fff;
   }
 
 }
@@ -45,4 +47,5 @@
   --difference-black:  #000;
   --difference-text:  #fff;
   --disk: #000;
+  --border:#fff;
 }

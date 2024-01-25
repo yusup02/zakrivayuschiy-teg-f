@@ -13,30 +13,15 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-.example {
-  -webkit-text-stroke: 1px solid transparent;
-  text-shadow: none;
-  font-family: 'Inter', sans-serif; /* Используйте ваш шрифт */
-  font-variation-settings: 'wght' 500; /* Настройки вариации шрифта */
-}
 
-@supports (-webkit-text-stroke: 1px solid transparent) or (text-stroke: 1px solid transparent) {
-  .example {
-    text-stroke: 1px solid transparent;
-    text-shadow: none;
-    font-family: 'Inter', sans-serif;
-    font-variation-settings: 'wght' 500;
-  }
+@supports (-webkit-text-stroke: 1px solid transparent) or
+  (text-stroke: 1px solid transparent) {
+  
 }
 
 /* Проверка поддержки -webkit-text-stroke */
 @supports (-webkit-text-stroke: 1px solid transparent) {
-  .example {
-    -webkit-text-stroke: 1px solid transparent;
-    text-shadow: none;
-    font-family: 'Inter', sans-serif;
-    font-variation-settings: 'wght' 500;
-  }
+
 }
 
 .page {
@@ -62,7 +47,7 @@
 /* меню */
 .theme-menu {
   width: 696px;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   border: 2px solid var(--black-color);
   background: var(--white-color);
   margin: 0 auto;
@@ -75,7 +60,7 @@
   text-decoration: none;
 }
 
-.theme-menu_html {
+.theme-menu_logo {
   font-size: 65px;
   margin-top: 136px;
   font-family: "PressStart2P", Arial, sans-serif;
@@ -86,9 +71,9 @@
 }
 
 .theme-menu_text {
-  margin-top: 10px;
+  margin-top: 18px;
   font-family: "PressStart2P", Arial, sans-serif;
-  font-size: 23px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -97,41 +82,49 @@
 
 .theme-menu__list {
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 23px;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  width: 72px;
 }
 
 .theme-menu__item {
   margin: 0 auto;
+  text-align: left;
 }
 
 .theme-menu__button {
-  width: 62px;
   text-align: left;
   background-color: transparent;
   border: none;
   color: var(--black-color);
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "PressStart2P", Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   position: relative;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::before {
   content: "►";
+  font-size: 20px;
   position: absolute;
-  top: 0;
-  left: -15px;
+  top: -6px;
+  left: -18px;
   margin-left: 5px;
-  animation: moveArrow 0.5s infinite alternate;
+  animation-name: moveArrow;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   display: none;
 }
 
@@ -150,6 +143,30 @@
 
 .theme-menu__button:focus {
   outline: none;
+  border: none;
+  opacity: 0.75;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ccc;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  transform: scaleX(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.theme-menu__button:hover::after,
+.theme-menu__button:focus::after {
+  transform: scaleX(2);
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Контейнер */
@@ -163,7 +180,7 @@
 
 /* Карточки */
 .card {
-  margin-top: 57px;
+  margin-top: 50px;
   width: 100%;
   background-color: var(--white-color);
   border: 2px solid var(--black-color);
@@ -177,6 +194,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-left: 10px;
 }
 
 .card_text_inner {
@@ -195,9 +213,9 @@
 .card_title {
   display: flex;
   justify-content: flex-end;
-  margin-right: 25px;
+  margin-right: 23px;
   margin-top: 25px;
-  gap: 12px;
+  gap: 6px;
 }
 
 .button {
@@ -210,7 +228,7 @@
 
   border: 2px solid var(--difference-while);
   background-clip: text;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
@@ -219,11 +237,15 @@
   z-index: 0;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .button::before {
   content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   translate: -100%;
   transition: 0.5s ease-in-out;
   background-color: var(--difference-while);
@@ -241,7 +263,6 @@
 
 .button:focus-visible {
   outline: none;
-  border-color: var(--difference-while);
   box-shadow: 2px 2px 0px 0px var(--difference-while);
 }
 
@@ -277,6 +298,10 @@
   border-color: var(--black-color);
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
 /* Картинки */
 .image {
   width: 100%;
@@ -285,120 +310,40 @@
   display: block;
 }
 
-.image2 {
+.grayscale {
   filter: grayscale(100%);
 }
 
-.image3 {
+.sepia {
   filter: sepia(100%);
 }
 
-.image4 {
+.brightness {
   filter: brightness(0.5);
 }
 
-.image6 {
+.hue-rotate {
   filter: hue-rotate(90deg);
 }
 
-.image5 {
+.saturate {
   filter: saturate(200%);
 }
 
-.image7 {
+.blur {
   filter: blur(10px);
 }
 
-.image8 {
+.contrast {
   filter: grayscale(50%) blur(2px) brightness(80%) contrast(120%);
 }
 
 .wrapper {
   width: 100%;
+  margin-top: 6px;
   position: relative;
   border-top: solid 2px var(--black-color);
   border-bottom: solid 2px var(--black-color);
-}
-
-/* Сердце */
-.cont,
-.main-body,
-.sparks {
-  fill: none;
-}
-
-.conture {
-  fill: var(--black-color);
-}
-
-.like-icon {
-  flex-shrink: 0;
-}
-
-.heart-icon {
-  display: none;
-}
-
-/* Объединяем общие стили для .heart с разными классами */
-.heart .core,
-.heart .main-body,
-.heart:active .core,
-.heart:active .main-body,
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body,
-.like-icon.is-liked .conture {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.heart:hover .core,
-.heart:hover .main-body {
-  fill: var(--black-color);
-  cursor: pointer;
-}
-
-.heart:active .conture,
-.heart:active .main-body {
-  fill: var(--red);
-  transition-delay: 0.1s;
-}
-
-.heart:active .core {
-  fill: var(--red);
-  transition-delay: 0.03s;
-}
-
-/* Определяем задержки для разных элементов */
-.heart .core {
-  transition-delay: 0.03s;
-}
-
-.heart .main-body {
-  transition-delay: 0.07s;
-}
-
-.like-icon.is-liked .conture {
-  transition-delay: 0.06s;
-  fill: var(--red);
-  animation: scaleUpSparks 0.3s ease-in-out alternate;
-}
-
-.like-icon.is-liked .core {
-  transition-delay: 0.03s;
-  fill: var(--red);
-  animation: scaleUpSparks 0.3s;
-}
-
-.like-icon.is-liked .main-body {
-  transition-delay: 0.07s;
-  fill: var(--red);
-  animation: scaleUpSparks 0.3s;
-}
-
-/* Применяем анимацию увеличения исчезновения к элементу с классом sparks при нажатии на like-icon */
-.like-icon.is-liked .sparks {
-  fill: var(--red); /* Установливаем цвет sparks для состояния "liked" */
-  animation: fadeOutSparks 0.05s ease-in-out alternate 0.3s forwards;
 }
 
 /* Кнопка с дискетом */
@@ -410,7 +355,6 @@
 
 .disk_button {
   width: 100%;
-
   margin: 0 auto;
   margin-bottom: 102px;
   display: flex;
@@ -419,17 +363,6 @@
   justify-content: center;
   padding-top: 15px;
   padding-bottom: 15px;
-
-}
-
-.disk_button:focus-visible {
-  outline: none;
-  border-color: var(--black-color);
-  box-shadow: 2px 2px 0px 0px var(--black-color);
-}
-
-.disk_button:hover {
-  cursor: pointer;
 }
 
 /* Модалка */
@@ -458,6 +391,7 @@
 }
 
 .dialog_button {
+  margin: auto;
   margin-top: 30px;
   width: 257px;
   height: 38px;
@@ -466,24 +400,11 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-  color: var(--black-color);
-  border: 2px solid var(--black-color);
-  background: var(--white-color);
-}
-
-.dialog_button:focus-visible {
-  outline: none;
-  border-color: var(--black-color);
-  box-shadow: 2px 2px 0px 0px var(--black-color);
-}
-
-.dialog_button:hover {
-  cursor: pointer;
+  text-transform: uppercase;
 }
 
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
 }
 
 .label {
@@ -496,7 +417,7 @@ dialog::backdrop {
   top: 25px;
   right: 25px;
   color: #000; /* цвет текста */
-  text-shadow: 0px 0px 2px #fff; /* обводка */
+  text-shadow: 0px 0px 2px var(--black-color);
   opacity: 0.5;
   mix-blend-mode: hard-light;
 }
@@ -522,13 +443,18 @@ rect {
     width: 371px;
   }
 
-  .theme-menu_html {
+  .theme-menu_logo {
     font-size: 49px;
     margin-top: 120px;
   }
 
+  .theme-menu_text {
+    font-size: 12px;
+  }
+
   .conteiner {
     max-width: 371px;
+    margin-top: 98px;
   }
 
   .card {
@@ -537,5 +463,21 @@ rect {
 
   .card_text_inner {
     width: 317.049px;
+  }
+
+  .wrapper {
+    margin-top: 9px;
+  }
+
+  .dialog {
+    width: 341px;
+    height: 195px;
+    padding: 0;
+  }
+
+  .dialog_title {
+    display: flex;
+    margin-top: 32px;
+    justify-content: center;
   }
 }

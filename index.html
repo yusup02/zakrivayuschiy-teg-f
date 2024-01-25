@@ -11,6 +11,12 @@
       href="./svg/favicon.svg"
       type="image/x-icon"
     />
+    <link
+      class="icon"
+      rel="apple-touch-icon"
+      href="./svg/favicon.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
@@ -24,10 +30,10 @@
     <!-- Заголовок и меню -->
     <header class="header">
       <nav class="theme-menu header__theme-menu">
-        <a class="theme-menu_title" href="#">
-          <h1 class="theme-menu_html">&lt;/HTML&gt;</h1>
+        <a class="theme-menu_title">
+          <h1 class="theme-menu_logo">&lt;/HTML&gt;</h1>
         </a>
-        <h1 class="theme-menu_text">Закрывающийся тег</h1>
+        <h2 class="theme-menu_text">Закрывающийся тег</h2>
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
           <li class="theme-menu__item">
@@ -77,7 +83,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button" type="submit">
+            <button class="card__icon-button" type="button" aria-hidden="true">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +119,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -123,7 +129,11 @@
         <article class="card">
           <h2 class="card_text">1 спринт: Я — чистый лист</h2>
           <div class="wrapper">
-            <img class="image image2" src="./images/image.png" alt="минивен2" />
+            <img
+              class="image grayscale"
+              src="./images/image.png"
+              alt="минивен2"
+            />
             <p class="label">&lt;/HTML&gt;</p>
           </div>
 
@@ -139,7 +149,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button" type="submit">
+            <button class="card__icon-button" type="button">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +185,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -185,7 +195,7 @@
         <article class="card">
           <h2 class="card_text">1 спринт: А если не получится?</h2>
           <div class="wrapper">
-            <img class="image image3" src="./images/image.png" alt="минивен3" />
+            <img class="image sepia" src="./images/image.png" alt="минивен3" />
             <p class="label">&lt;CSS&gt;</p>
           </div>
 
@@ -199,7 +209,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button" type="submit">
+            <button class="card__icon-button" type="button">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +245,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -245,7 +255,11 @@
         <article class="card">
           <h2 class="card_text">2 спринт: Погоня за идеалом</h2>
           <div class="wrapper">
-            <img class="image image4" src="./images/image.png" alt="минивен4" />
+            <img
+              class="image brightness"
+              src="./images/image.png"
+              alt="минивен4"
+            />
             <p class="label">&lt;desigions&gt;</p>
           </div>
 
@@ -261,7 +275,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button" type="submit">
+            <button class="card__icon-button" type="button">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -297,7 +311,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -307,7 +321,11 @@
         <article class="card">
           <h2 class="card_text">2 спринт: О тех, кто рядом</h2>
           <div class="wrapper">
-            <img class="image image5" src="./images/image.png" alt="минивен5" />
+            <img
+              class="image hue-rotate"
+              src="./images/image.png"
+              alt="минивен5"
+            />
             <p class="label">care</p>
           </div>
 
@@ -324,7 +342,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button button" type="submit">
+            <button class="card__icon-button" type="button">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -360,7 +378,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -370,7 +388,11 @@
         <article class="card">
           <h2 class="card_text">3 спринт: Обходные стратегии</h2>
           <div class="wrapper">
-            <img class="image image6" src="./images/image.png" alt="минивен6" />
+            <img
+              class="image saturate"
+              src="./images/image.png"
+              alt="минивен6"
+            />
             <p class="label">&lt;support&gt;</p>
           </div>
 
@@ -384,7 +406,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button button" type="submit">
+            <button class="card__icon-button" type="button">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -420,7 +442,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -430,7 +452,7 @@
         <article class="card">
           <h2 class="card_text">3 спринт: Когда опускаются руки</h2>
           <div class="wrapper">
-            <img class="image image7" src="./images/image.png" alt="минивен7" />
+            <img class="image blur" src="./images/image.png" alt="минивен7" />
             <p class="label">&lt;lifes-style: none;&gt;</p>
           </div>
 
@@ -446,7 +468,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button" type="submit">
+            <button class="card__icon-button" type="button">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -482,7 +504,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -492,7 +514,11 @@
         <article class="card">
           <h2 class="card_text">«Сейчас я здесь»</h2>
           <div class="wrapper">
-            <img class="image image8" src="./images/image.png" alt="минивен" />
+            <img
+              class="image contrast"
+              src="./images/image.png"
+              alt="минивен"
+            />
             <p class="label">&lt;experience&gt;</p>
           </div>
 
@@ -509,7 +535,7 @@
           </p>
 
           <div class="card_title">
-            <button class="card__icon-button" type="submit">
+            <button class="card__icon-button" type="button">
               <svg
                 class="like-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -545,7 +571,7 @@
               </svg>
             </button>
 
-            <button class="card__like-button button" type="submit">
+            <button class="card__like-button button" type="button">
               <span class="button__text">Like</span>
             </button>
           </div>
@@ -557,11 +583,14 @@
         <button
           class="disk_button button"
           id="dialog"
-          type="submit"
+          type="button"
           onclick="window['dialog-id'].showModal();"
           aria-controls="dialog-id"
         >
-          <svg
+  с      <svg width="29" height="28" viewBox="0 0 29 28">
+          <use href="./svg/floppy.svg#floppy" />
+        </svg>
+          <!-- <svg
             class="disk_svg"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -1181,7 +1210,7 @@
               transform="rotate(-180 28.5 6.46167)"
               fill="black"
             />
-          </svg>
+          </svg> -->
           <span class="button__text text">Сохранить на память </span>
         </button>
 
@@ -1807,15 +1836,15 @@
                 fill="black"
               />
             </svg>
-            <h2 class="dialog_text ">Вставьте дискету, чтобы продолжить</h2>
+            <h2 class="dialog_text">Вставьте дискету, чтобы продолжить</h2>
           </div>
           <form action="#" method="dialog">
             <button
-              class="dialog_button"
+              class="dialog_button button"
               type="submit"
               onclick="window['dialog-id'].close()"
             >
-              ОК
+              <span class="button__text text">ок</span>
             </button>
           </form>
         </dialog>
