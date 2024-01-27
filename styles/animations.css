@@ -12,7 +12,25 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+@keyframes moveArrow {
+  to {
+    left: -14px;
+  }
+}
 
+/* Определяем анимацию для увеличения размера sparks */
+@keyframes scaleUpSparks {
+  to {
+    scale: 1.5;
+  }
+}
+
+/* Определяем анимацию для исчезновения sparks */
+@keyframes fadeOutSparks {
+  to {
+    fill: #ff0000;
+  }
+}
 /* Сердце */
 .cont,
 .main-body,
@@ -116,8 +134,7 @@
 
 /* Применяем анимацию увеличения исчезновения к элементу с классом sparks при нажатии на like-icon */
 .like-icon.is-liked .sparks {
-  fill: var(--red); /* Установливаем цвет sparks для состояния "liked" */
-  animation: fadeOutSparks 0.05s ease-in-out alternate 0.3s forwards;
+  animation: fadeOutSparks  0.3s ease-in 0.3s alternate;
   transform-origin: center;
 }
 
@@ -126,28 +143,4 @@
   animation: scaleUpSparks 0.3s ease-in alternate;
 }
 
-@keyframes moveArrow {
-  0% {
-    transform: translateX(-4px);
-  }
-  100% {
-    transform: translateX(4px);
-  }
-}
 
-/* Определяем анимацию для увеличения размера sparks */
-@keyframes scaleUpSparks {
-  to {
-    scale: 1.5;
-  }
-}
-
-/* Определяем анимацию для исчезновения sparks */
-@keyframes fadeOutSparks {
-  from {
-    opacity: 1; /* Полностью видимый в начале */
-  }
-  to {
-    opacity: 0; /* Полностью прозрачный в конце */
-  }
-}

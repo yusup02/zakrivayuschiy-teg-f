@@ -117,26 +117,16 @@
   position: relative;
   opacity: 1;
   transition: opacity 0.3s ease;
-}
-
-.theme-menu__button::before {
-  content: "►";
-  font-size: 20px;
-  position: absolute;
-  top: -6px;
-  left: -18px;
-  margin-left: 5px;
-  animation-name: moveArrow;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  display: none;
+  padding: 0;
 }
 
 .theme-menu__button:disabled::before {
-  display: block;
+  position: absolute;
+  content: "▶";
+  left: -18px;
+  animation: moveArrow 0.5s ease-in-out infinite alternate;
 }
+
 
 .theme-menu__button:disabled {
   pointer-events: none;
@@ -145,6 +135,7 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus {
@@ -154,18 +145,16 @@
 }
 
 .theme-menu__button::after {
-  content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #ccc;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-
+  content: "";
+  bottom: 0px;
+  left: 0px;
+  background-color: var(--disk);
   transform: scaleX(0);
-  opacity: 0;
-  visibility: hidden;
+  transition: transform 0.3s ease;
+  height: 2px;
+  width: 50%;
+  transform-origin: left;
 }
 
 .theme-menu__button:hover::after,
@@ -235,13 +224,13 @@
   flex-shrink: 0;
 
   border: 2px solid var(--black-color);
-  background-clip: text;
   transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
   background-color: var(--difference-while);
-  z-index: 0;
+  z-index: 5;
+  transform: translate3d(0, 0, 0);
 }
 
 .button:focus {
@@ -362,16 +351,14 @@
 }
 
 .disk_button {
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 102px;
+  width: 335px;
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
   padding-top: 15px;
   padding-bottom: 15px;
   color: var(--difference-while);
+  margin: 0 auto;
 }
 
 /* Модалка */
