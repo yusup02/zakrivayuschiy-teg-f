@@ -65,16 +65,29 @@
   transform-origin: center;
 }
 
-.heart:hover .core,
 .heart:hover .main-body {
   fill: var(--black-color);
   cursor: pointer;
 }
 
-.heart:active .conture,
-.heart:active .main-body {
+.heart:hover .core {
+  cursor: pointer;
+  fill: var(--black-color);
+  transition: fill 0.3s ease;
+}
+
+.heart:hover .main-body {
+  transition: fill 0.3s ease 0.05s;
+}
+
+.heart:active .conture {
   fill: var(--red);
   transition-delay: 0.1s;
+}
+
+.heart:active .main-body {
+  fill: var(--red);
+  transition: fill 0.3s ease 0.05s;
 }
 
 .heart:active .core {
@@ -112,6 +125,11 @@
   transform-origin: center;
 }
 
+.like-icon.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scaleUpSparks 0.3s ease-in alternate;
+}
+
 
 
 @keyframes moveArrow {
@@ -121,12 +139,9 @@
 
 /* Определяем анимацию для увеличения размера sparks */
 @keyframes scaleUpSparks {
-  from {
-    transform: scale(1); /* Исходный размер */
-  }
   to {
-    transform: scale(1.5); /* Увеличенный размер */
-  }
+    scale: 1.5;
+}
 }
 
 /* Определяем анимацию для исчезновения sparks */
@@ -137,4 +152,5 @@
   to {
     opacity: 0; /* Полностью прозрачный в конце */
   }
+  
 }

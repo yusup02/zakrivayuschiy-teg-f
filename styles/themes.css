@@ -16,6 +16,7 @@
   --difference-text:  #00cc14;
   --disk: #00cc14;
   --border:#fff;
+  --text-button-color: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +31,7 @@
     --difference-text:  #00cc14;
     --disk: #00cc14;
     --border:#fff;
+    --text-button-color: #000;
   }
 
 }
@@ -47,5 +49,6 @@
   --difference-black:  #000;
   --difference-text:  #fff;
   --disk: #000;
+  --text-button-color: #ffffff;
   --border:#fff;
 }

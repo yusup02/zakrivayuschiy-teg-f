@@ -226,14 +226,13 @@
   gap: 10px;
   flex-shrink: 0;
 
-  border: 2px solid var(--difference-while);
+  border: 2px solid var(--black-color);
   background-clip: text;
   transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
-  mix-blend-mode: difference;
-  background-color: var(--difference-black);
+  background-color: var(--difference-while);
   z-index: 0;
 }
 
@@ -248,7 +247,7 @@
   height: 100%;
   translate: -100%;
   transition: 0.5s ease-in-out;
-  background-color: var(--difference-while);
+  background-color: var(--black);
   z-index: 1;
 }
 
@@ -363,6 +362,7 @@
   justify-content: center;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: var(--difference-while);
 }
 
 /* Модалка */
@@ -401,6 +401,7 @@
   gap: 10px;
   flex-shrink: 0;
   text-transform: uppercase;
+  color: var(--difference-text);
 }
 
 dialog::backdrop {
@@ -426,16 +427,27 @@ dialog::backdrop {
   position: relative;
   z-index: 2;
   fill: var(--disk);
-  mix-blend-mode: difference;
 }
 
 .text {
   padding: 0;
 }
 
-rect {
-  fill: var(--difference-text);
+.rect {
+  position: relative;
+  z-index: 2;
+  fill: currentColor;
   mix-blend-mode: difference;
+}
+
+
+.floppy-icon {
+  width: 21px;
+  height: 21px;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 1;
+  color: var(--text-button-color, #ffffff);
 }
 
 @media screen and (max-width: 1430px) {
