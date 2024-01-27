@@ -14,16 +14,6 @@
 
 */
 
-@supports (-webkit-text-stroke: 1px solid transparent) or
-  (text-stroke: 1px solid transparent) {
-  
-}
-
-/* Проверка поддержки -webkit-text-stroke */
-@supports (-webkit-text-stroke: 1px solid transparent) {
-
-}
-
 .page {
   background-color: var(--white-color);
   background-image: repeating-linear-gradient(
@@ -43,6 +33,7 @@
     );
   background-attachment: fixed;
   background-size: cover;
+  font-variation-settings: "wght"  400;
 }
 /* меню */
 .theme-menu {
@@ -66,6 +57,7 @@
   font-family: "PressStart2P", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   line-height: normal;
   text-transform: uppercase;
 }
@@ -76,6 +68,7 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   line-height: normal;
   text-transform: uppercase;
 }
@@ -87,6 +80,7 @@
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   line-height: normal;
   text-transform: uppercase;
   width: 72px;
@@ -106,6 +100,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   line-height: normal;
   text-transform: uppercase;
   position: relative;
@@ -193,6 +188,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
+  font-variation-settings: "wght" 700;
   line-height: normal;
   margin-left: 10px;
 }
@@ -203,6 +199,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   line-height: 21px; /* 116.667% */
   margin: 0 auto;
   margin-top: 27px;
@@ -275,6 +272,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   z-index: 2;
   position: relative;
   padding-block: 11px;
@@ -386,6 +384,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   line-height: 150%; /* 21px */
   text-transform: uppercase;
 }
@@ -413,6 +412,7 @@ dialog::backdrop {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings: "wght"  400;
   line-height: normal;
   position: absolute;
   top: 25px;
@@ -439,7 +439,6 @@ dialog::backdrop {
   fill: currentColor;
   mix-blend-mode: difference;
 }
-
 
 .floppy-icon {
   width: 21px;

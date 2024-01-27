@@ -49,12 +49,11 @@
   transform-origin: center;
 }
 
-
 .like-icon.is-liked .core,
 .like-icon.is-liked .main-body,
 .like-icon.is-liked .conture {
   fill: transparent;
-  transition: fill 0.3s ease 0.06s; ;
+  transition: fill 0.3s ease 0.06s;
   transform-origin: center;
 }
 
@@ -68,16 +67,13 @@
 .heart:hover .main-body {
   fill: var(--black-color);
   cursor: pointer;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .heart:hover .core {
   cursor: pointer;
   fill: var(--black-color);
   transition: fill 0.3s ease;
-}
-
-.heart:hover .main-body {
-  transition: fill 0.3s ease 0.05s;
 }
 
 .heart:active .conture {
@@ -130,18 +126,20 @@
   animation: scaleUpSparks 0.3s ease-in alternate;
 }
 
-
-
 @keyframes moveArrow {
-  0% { transform: translateX(-4px); }
-  100% { transform: translateX(4px); } 
+  0% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(4px);
+  }
 }
 
 /* Определяем анимацию для увеличения размера sparks */
 @keyframes scaleUpSparks {
   to {
     scale: 1.5;
-}
+  }
 }
 
 /* Определяем анимацию для исчезновения sparks */
@@ -152,5 +150,4 @@
   to {
     opacity: 0; /* Полностью прозрачный в конце */
   }
-  
 }
