@@ -46,20 +46,25 @@
   background-size: cover;
   font-variation-settings: "wght" 400;
 }
-/* меню */
-.theme-menu {
-  width: 696px;
-  padding-bottom: 20px;
+
+.header {
   border: 2px solid var(--black-color);
   background: var(--white-color);
+  text-align: center;
+}
+
+/* меню */
+.theme-menu {
+  padding-bottom: 20px;
   margin: 0 auto;
-  margin-top: 102px;
   text-align: center;
   color: var(--black-color);
+  margin-top: 19px;
 }
 
 .theme-menu_title {
   text-decoration: none;
+  color: var(--black-color);
 }
 
 .theme-menu_logo {
@@ -74,7 +79,7 @@
 }
 
 .theme-menu_text {
-  margin-top: 18px;
+  margin-top: 23px;
   font-family: "PressStart2P", Arial, sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -86,7 +91,6 @@
 
 .theme-menu__list {
   margin: 0 auto;
-  margin-top: 23px;
   font-family: "Inter", Arial, sans-serif;
   font-size: 22px;
   font-style: normal;
@@ -229,8 +233,8 @@
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
   background-color: var(--difference-while);
-  z-index: 5;
-  transform: translate3d(0, 0, 0);
+  z-index: 1;
+  /* transform: translate3d(0, 0, 0); */
 }
 
 .button:focus {
@@ -252,11 +256,6 @@
   translate: 0%;
 }
 
-.button .button__text {
-  position: relative; /* Для корректного отображения текста поверх псевдоэлемента */
-  z-index: 1;
-}
-
 .button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0px 0px var(--difference-while);
@@ -267,14 +266,14 @@
 }
 
 .button__text {
-  color: var(--difference-text);
+  color: var(--difference-while);
+  position: relative;
   font-family: "PressStart2P", Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   font-variation-settings: "wght" 400;
   z-index: 2;
-  position: relative;
   padding-block: 11px;
   line-height: 0.9;
   mix-blend-mode: difference;
@@ -449,9 +448,6 @@ dialog::backdrop {
 }
 
 @media screen and (max-width: 1430px) {
-  .theme-menu {
-    width: 371px;
-  }
 
   .theme-menu_logo {
     font-size: 49px;
@@ -489,5 +485,10 @@ dialog::backdrop {
     display: flex;
     margin-top: 32px;
     justify-content: center;
+  }
+
+  .disk_button {
+    width: 309px;
+    flex-direction: column;
   }
 }
