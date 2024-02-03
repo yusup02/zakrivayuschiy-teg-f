@@ -42,7 +42,7 @@
 }
 
 .card__icon-button:hover .core {
-  fill: var(--black);
+  fill: var(--black-color);
   transition: fill 0.3s ease;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .card__icon-button:hover .main-body {
-  fill: var(--black);
+  fill: var(--black-color);
   transition: fill 0.3s ease 0.05s;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .conture {
-  fill: var(--black);
+  fill: var(--black-color);
   transition: fill 0.1s linear;
 }
 
