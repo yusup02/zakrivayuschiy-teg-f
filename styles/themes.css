@@ -17,6 +17,8 @@
   --disk: #00cc14;
   --border: #fff;
   --text-button-color: #000;
+  --font-main-weight: 465;
+  --font-card-weight: 785;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,6 +34,8 @@
     --disk: #00cc14;
     --border: #fff;
     --text-button-color: #000;
+    --font-main-weight: 465;
+    --font-card-weight: 785;
   }
 }
 
@@ -50,4 +54,6 @@
   --disk: #000;
   --text-button-color: #ffffff;
   --border: #fff;
+  --font-main-weight: 400;
+  --font-card-weight: 700;
 }

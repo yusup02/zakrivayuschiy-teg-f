@@ -18,7 +18,7 @@
   (text-stroke: 1px var(--text-button-color)) or
     (-webkit-text-stroke: 1px var(--text-button-color))
 ) {
-  .image-group__span {
+  .label {
     -webkit-text-stroke: 1px var(--text-button-color);
     text-stroke: 1px var(--text-button-colorr);
     text-shadow: none;
@@ -44,7 +44,7 @@
     );
   background-attachment: fixed;
   background-size: cover;
-  font-variation-settings: "wght" 400;
+  font-variation-settings: "wght" var(--font-main-weight);
 }
 
 .header {
@@ -73,7 +73,6 @@
   font-family: "PressStart2P", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
   line-height: normal;
   text-transform: uppercase;
 }
@@ -84,26 +83,25 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
   line-height: normal;
   text-transform: uppercase;
+  color: var(--black-color);
 }
 
 .theme-menu__list {
   margin: 0 auto;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Press Start 2P", Arial, sans-serif;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
   line-height: normal;
   text-transform: uppercase;
-  width: 72px;
 }
 
 .theme-menu__item {
   margin: 0 auto;
   text-align: left;
+  width: 72px;
 }
 
 .theme-menu__button {
@@ -115,18 +113,19 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
   line-height: normal;
   text-transform: uppercase;
   position: relative;
   opacity: 1;
   transition: opacity 0.3s ease;
+  transition: box-shadow 0.3s ease;
   padding: 0;
 }
 
 .theme-menu__button:disabled::before {
   position: absolute;
   content: "▶";
+  top: 0;
   left: -18px;
   animation: moveArrow 0.5s ease-in-out infinite alternate;
 }
@@ -139,13 +138,11 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:focus {
   outline: none;
-  border: none;
-  opacity: 0.75;
 }
 
 .theme-menu__button::after {
@@ -161,11 +158,9 @@
   transform-origin: left;
 }
 
-.theme-menu__button:hover::after,
 .theme-menu__button:focus::after {
   transform: scaleX(2);
-  opacity: 1;
-  visibility: visible;
+  opacity: 0.75;
 }
 
 /* Контейнер */
@@ -174,7 +169,6 @@
   width: 100%;
   margin: 0 auto;
   margin-top: 102px;
-  background-color: var(--white-color);
 }
 
 /* Карточки */
@@ -192,7 +186,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  font-variation-settings: "wght" 700;
+  font-variation-settings: "wght" var(--font-card-weight);
   line-height: normal;
   margin-left: 10px;
 }
@@ -203,7 +197,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
+  font-variation-settings: "wght" var(--font-main-weight);
   line-height: 21px; /* 116.667% */
   margin: 0 auto;
   margin-top: 27px;
@@ -214,6 +208,7 @@
 .card_title {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-start;
   margin-right: 23px;
   margin-top: 25px;
   gap: 6px;
@@ -229,12 +224,12 @@
 
   border: 2px solid var(--black-color);
   transition: background-color 0.3s ease;
+  transition: border-color 0.3s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
   background-color: var(--difference-while);
   z-index: 1;
-  /* transform: translate3d(0, 0, 0); */
 }
 
 .button:focus {
@@ -272,7 +267,6 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
   z-index: 2;
   padding-block: 11px;
   line-height: 0.9;
@@ -288,14 +282,17 @@
   outline: none; /* объединяем стили для разного состояния кнопки */
   margin-right: 7px;
   transition: border-color 0.3s ease-in-out;
-}
-
-.card__icon-button:focus-visible {
-  border-color: var(--black-color);
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .card__icon-button:focus {
   outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--black-color);
 }
 
 /* Картинки */
@@ -382,7 +379,6 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
   line-height: 150%; /* 21px */
   text-transform: uppercase;
 }
@@ -410,7 +406,6 @@ dialog::backdrop {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wght" 400;
   line-height: normal;
   position: absolute;
   top: 25px;

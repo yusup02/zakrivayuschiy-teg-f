@@ -31,108 +31,59 @@
     fill: #ff0000;
   }
 }
-/* Сердце */
-.cont,
-.main-body {
-  fill: none;
+
+.sparks {
+  fill: transparent;
 }
 
 .core {
+  fill: transparent;
+  transition: fill 0.3s ease 0.05s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--black);
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:active .core {
+  fill: var(--red);
+  
+}
+
+.card__icon-button .is-liked .core {
+  fill: var(--red);
+  transition: fill 0.3s ease;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--black);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--red);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.card__icon-button .is-liked .main-body {
+  fill: var(--red);
   transition: fill 0.3s ease 0.05s;
 }
 
 .conture {
-  fill: var(--black-color);
+  fill: var(--black);
   transition: fill 0.1s linear;
 }
 
-.main-body {
-  transition: fill 0.3s ease;
-}
-
-.like-icon {
-  flex-shrink: 0;
-}
-
-.heart-icon {
-  display: none;
-}
-
-/* Объединяем общие стили для .heart с разными классами */
-.heart .core,
-.heart .main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-  transform-origin: center;
-}
-
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body,
-.like-icon.is-liked .conture {
-  fill: transparent;
+.card__icon-button .is-liked .conture {
+  fill: var(--red);
   transition: fill 0.3s ease 0.06s;
-  transform-origin: center;
-}
-
-.heart:active .main-body,
-.heart:active .core {
-  fill: transparent;
-  transition: fill 0.3s ease 0.06s;
-  transform-origin: center;
-}
-
-.heart:hover .main-body {
-  fill: var(--black-color);
-  cursor: pointer;
-  transition: fill 0.3s ease 0.05s;
-}
-
-.heart:hover .core {
-  cursor: pointer;
-  fill: var(--black-color);
-  transition: fill 0.3s ease;
-}
-
-.heart:active .conture {
-  fill: var(--red);
-  transition-delay: 0.1s;
-}
-
-.heart:active .main-body {
-  fill: var(--red);
-  transition: fill 0.3s ease 0.05s;
-}
-
-.heart:active .core {
-  fill: var(--red);
-  transition-delay: 0.03s;
-}
-
-/* Определяем задержки для разных элементов */
-.heart .core {
-  transition-delay: 0.03s;
-}
-
-.heart .main-body {
-  transition-delay: 0.07s;
-}
-
-.like-icon.is-liked .conture {
-  transition-delay: 0.06s;
-  fill: var(--red);
-}
-
-.like-icon.is-liked .core {
-  transition-delay: 0.03s;
-  fill: var(--red);
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--red);
-}
-
-.sparks {
-  fill: transparent;
 }
 
 .like-icon.is-liked .sparks {
