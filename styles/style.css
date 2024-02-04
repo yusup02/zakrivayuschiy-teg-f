@@ -130,7 +130,6 @@
   animation: moveArrow 0.5s ease-in-out infinite alternate;
 }
 
-
 .theme-menu__button:disabled {
   pointer-events: none;
   opacity: 0.6;
@@ -165,7 +164,7 @@
 
 /* Контейнер */
 .conteiner {
-  max-width: 696px;
+  max-width: 48.6%;
   width: 100%;
   margin: 0 auto;
   margin-top: 102px;
@@ -342,37 +341,46 @@
 /* Кнопка с дискетом */
 .disk {
   margin: 0 auto;
-  width: 306px;
-  margin-top: 54px;
+  margin-top: 61px;
 }
 
 .disk_button {
   width: 335px;
+  min-height: 51px;
   display: flex;
   gap: 8px;
   justify-content: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
   color: var(--difference-while);
   margin: 0 auto;
 }
 
 /* Модалка */
 .dialog {
+  min-width: 357px;
+  min-height: 193px;
+  margin: 0 auto;
+  margin-top: 383px;
   background-color: var(--white-color);
   border: 2px solid var(--black-color);
+}
+
+.dialog_inner {
+  width: 353px;
+  height: 191px;
+  padding: 30px;
 }
 
 .dialog_title {
   display: flex;
   color: var(--difference-while);
+  align-items: center;
+  gap: 20px;
 }
 
 .dialog_text {
   max-width: 198px;
   width: 100%;
   flex-shrink: 0;
-  margin-left: 20px;
 
   color: var(--black-color);
   font-family: "PressStart2P", Arial, sans-serif;
@@ -388,7 +396,6 @@
   margin-top: 30px;
   width: 257px;
   height: 38px;
-  padding: 9px 17px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -410,8 +417,8 @@ dialog::backdrop {
   position: absolute;
   top: 25px;
   right: 25px;
-  color: #000; /* цвет текста */
-  text-shadow: 0px 0px 2px var(--black-color);
+  color: var(--black-color); /* цвет текста */
+  text-shadow: 0px 0px 2px var(--text-button-color);
   opacity: 0.5;
   mix-blend-mode: hard-light;
 }
@@ -433,6 +440,11 @@ dialog::backdrop {
   mix-blend-mode: difference;
 }
 
+.rect_disk {
+  width: 21px;
+  height: 21px;
+}
+
 .floppy-icon {
   width: 21px;
   height: 21px;
@@ -443,7 +455,6 @@ dialog::backdrop {
 }
 
 @media screen and (max-width: 1430px) {
-
   .theme-menu_logo {
     font-size: 49px;
     margin-top: 120px;
@@ -472,18 +483,35 @@ dialog::backdrop {
 
   .dialog {
     width: 341px;
-    height: 195px;
+    height: 191px;
+    padding: 0;
+  }
+
+  .dialog_inner {
+    margin: 32px 42px;
+    width: 257px;
     padding: 0;
   }
 
   .dialog_title {
     display: flex;
-    margin-top: 32px;
+    width: 257px;
     justify-content: center;
   }
 
+  .disk {
+    margin-top: 76px;
+  }
+
   .disk_button {
-    width: 309px;
+    padding: 0;
+    width: 306px;
+    min-height: 80px;
     flex-direction: column;
+  }
+
+  .rect_disk {
+    width: 28px;
+    height: 28px;
   }
 }
