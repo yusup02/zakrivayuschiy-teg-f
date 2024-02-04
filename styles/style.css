@@ -403,7 +403,8 @@
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
+  background-color: #000;
+  opacity: 0.75;
 }
 
 .label {
