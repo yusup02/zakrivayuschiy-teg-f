@@ -118,7 +118,6 @@
   position: relative;
   opacity: 1;
   transition: opacity 0.3s ease;
-  transition: box-shadow 0.3s ease;
   padding: 0;
 }
 
@@ -222,8 +221,7 @@
   flex-shrink: 0;
 
   border: 2px solid var(--black-color);
-  transition: background-color 0.3s ease;
-  transition: border-color 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
   margin-bottom: 25px;
