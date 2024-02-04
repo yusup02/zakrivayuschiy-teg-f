@@ -38,12 +38,12 @@
 
 .core {
   fill: transparent;
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .card__icon-button:hover .core {
   fill: var(--black-color);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .core {
@@ -53,27 +53,27 @@
 
 .card__icon-button .is-liked .core {
   fill: var(--red);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--black-color);
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .card__icon-button:active .main-body {
   fill: var(--red);
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .card__icon-button .is-liked .main-body {
   fill: var(--red);
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .conture {
@@ -83,7 +83,7 @@
 
 .card__icon-button .is-liked .conture {
   fill: var(--red);
-  transition: fill 0.3s ease 0.06s;
+  transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .sparks {
@@ -94,4 +94,8 @@
 .card__icon-button .is-liked .heart {
   animation: scaleUpSparks 0.3s ease-in alternate;
   transform-origin: center;
+}
+
+.like-icon:hover {
+  cursor: pointer;
 }
