@@ -51,7 +51,6 @@
   border: 2px solid var(--black-color);
   background: var(--white-color);
   text-align: center;
-  padding-top: 120px;
 }
 
 /* меню */
@@ -60,12 +59,14 @@
   margin: 0 auto;
   text-align: center;
   color: var(--black-color);
-  margin-top: 19px;
+  margin-top: 18px;
+  display: flex;
 }
 
 .theme-menu_logo {
+  display: block;
   font-size: 65px;
-  margin-top: 136px;
+  padding-top: 134px;
   font-family: "PressStart2P", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -99,7 +100,6 @@
 .theme-menu__item {
   margin: 0 auto;
   text-align: left;
-  width: 72px;
 }
 
 .theme-menu__button {
@@ -117,6 +117,8 @@
   opacity: 1;
   transition: opacity 0.3s ease;
   padding: 0;
+  margin-left: 16px;
+  margin-top: 8px;
 }
 
 .theme-menu__button:disabled::before {
@@ -145,7 +147,7 @@
 .theme-menu__button::after {
   position: absolute;
   content: "";
-  bottom: 0px;
+  bottom: -2px;
   left: 0px;
   background-color: var(--disk);
   transform: scaleX(0);
@@ -185,6 +187,7 @@
   font-variation-settings: "wght" var(--font-card-weight);
   line-height: normal;
   margin-left: 10px;
+  margin-top: 4px;
 }
 
 .card_text_inner {
@@ -197,7 +200,7 @@
   line-height: 21px; /* 116.667% */
   margin: 0 auto;
   margin-top: 27px;
-  max-width: 646px;
+  max-width: 86.5%;
   width: 100%;
 }
 
@@ -207,7 +210,7 @@
   align-items: flex-start;
   margin-right: 23px;
   margin-top: 25px;
-  gap: 6px;
+  gap: 7px;
 }
 
 .button {
@@ -219,10 +222,10 @@
   flex-shrink: 0;
 
   border: 2px solid var(--black-color);
-  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
   position: relative;
   overflow: hidden; /* Для эффекта "заливки" цветом */
-  margin-bottom: 25px;
+  margin-bottom: 21px;
   background-color: var(--text-button-color);
   z-index: 1;
 }
@@ -275,8 +278,7 @@
   width: 40px;
   border: 2px solid transparent;
   outline: none; /* объединяем стили для разного состояния кнопки */
-  margin-right: 7px;
-  transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -328,7 +330,7 @@
 
 .wrapper {
   width: 100%;
-  margin-top: 6px;
+  margin-top: 4px;
   position: relative;
   border-top: solid 2px var(--black-color);
   border-bottom: solid 2px var(--black-color);
@@ -337,7 +339,7 @@
 /* Кнопка с дискетом */
 .disk {
   margin: 0 auto;
-  margin-top: 61px;
+  margin-top: 55px;
 }
 
 .disk_button {
@@ -353,18 +355,15 @@
 /* Модалка */
 .dialog {
   min-width: 357px;
-  min-height: 193px;
   margin: 0 auto;
   margin-top: 383px;
   background-color: var(--white-color);
   border: 2px solid var(--black-color);
-  overflow: hidden;
-
+  margin-bottom: 103px;
 }
 
 .dialog_inner {
   width: 353px;
-  height: 191px;
   padding: 30px;
 }
 
@@ -463,27 +462,16 @@ dialog::backdrop {
     font-size: 12px;
   }
 
-  .conteiner {
-    max-width: 371px;
-    margin-top: 98px;
-  }
-
   .card {
     margin-top: 50px;
   }
 
-  .card_text_inner {
-    width: 317.049px;
-  }
 
-  .wrapper {
-    margin-top: 9px;
-  }
 
   .dialog {
     width: 341px;
-    height: 191px;
     padding: 0;
+    margin-bottom: 100px;
   }
 
   .dialog_inner {
@@ -499,7 +487,7 @@ dialog::backdrop {
   }
 
   .disk {
-    margin-top: 76px;
+    margin-top: 54px;
   }
 
   .disk_button {
@@ -512,5 +500,24 @@ dialog::backdrop {
   .rect_disk {
     width: 28px;
     height: 28px;
+  }
+
+  .label {
+    top: 24px;
+    right: 12px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .conteiner {
+    max-width: 90%;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .conteiner {
+    max-width: 100%;
+    margin-top: 100px;
   }
 }
