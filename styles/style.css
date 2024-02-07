@@ -200,7 +200,7 @@
   line-height: 21px; /* 116.667% */
   margin: 0 auto;
   margin-top: 27px;
-  max-width: 86.5%;
+  max-width: 92.9%;
   width: 100%;
 }
 
@@ -340,6 +340,7 @@
 .disk {
   margin: 0 auto;
   margin-top: 55px;
+  margin-bottom: 103px;
 }
 
 .disk_button {
@@ -354,17 +355,19 @@
 
 /* Модалка */
 .dialog {
-  min-width: 357px;
+  width: 357px;
   margin: 0 auto;
   margin-top: 383px;
   background-color: var(--white-color);
   border: 2px solid var(--black-color);
-  margin-bottom: 103px;
+  padding: 0;
 }
 
 .dialog_inner {
-  width: 353px;
-  padding: 30px;
+  width: 293px;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 27px;
 }
 
 .dialog_title {
@@ -391,7 +394,7 @@
 .dialog_button {
   margin: auto;
   margin-top: 30px;
-  width: 257px;
+  width: 100%;
   height: 38px;
   justify-content: center;
   align-items: center;
@@ -469,13 +472,13 @@ dialog::backdrop {
 
 
   .dialog {
-    width: 341px;
+    width: 340px;
     padding: 0;
     margin-bottom: 100px;
   }
 
   .dialog_inner {
-    margin: 32px 42px;
+    margin: 30px 40px;
     width: 257px;
     padding: 0;
   }
@@ -512,6 +515,14 @@ dialog::backdrop {
   .conteiner {
     max-width: 90%;
     margin-top: 100px;
+  }
+
+  .disk {
+    margin-bottom: 100px;
+  }
+
+  .card_text_inner {
+    max-width: 86.5%;
   }
 }
 

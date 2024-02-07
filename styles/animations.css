@@ -93,7 +93,7 @@
 
 .card__icon-button .is-liked .heart {
   animation: scaleUpSparks 0.3s ease-in alternate;
-  transition-delay: 0.1s;
+  animation-delay: 0.1s;
   transform-origin: center;
 }
 
